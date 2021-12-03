@@ -1,0 +1,14 @@
+#instructions{
+    float: right;
+}
+h2{
+    width: 100%;
+
+}
+.big_image{
+    width: 100%;
+}
+.instruction_image{
+    width: 100%;
+    display: block;
+}
