@@ -23,9 +23,14 @@ function preload(){
 	img = loadImage("imgs/mario/mario05.png");
 }
 function setup(){
-	createCanvas(523, 390);
+	createCanvas(1240, 336);
+	canvas.parent('canvas');
+
+    instializeInSetup(mario);
+
 	video = createCapture(VIDEO);
-    video.size(600, 450)
+    video.size(800, 400);
+	video.parent('game_console');
 
 	poseNet = ml5.poseNet(video, ModalLoaded());
 	poseNet.on('pose', getPoses);
@@ -53,8 +58,10 @@ function ModalLoaded(){
 
 function getPoses(results){
 	if(results.length > 0){
+		
+		console.log(results)
 		noseX = results[0].pose.nose.x;
 		noseY = results[0].pose.nose.y;
-		console.log("noseX : " + noseX + "noseY : " + noseY);
+		
 	}
 }
