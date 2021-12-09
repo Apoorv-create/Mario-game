@@ -21,6 +21,9 @@ marioY = 325;
 
 function preload(){
 	img = loadImage("imgs/mario/mario05.png");
+	world_start = loadSound("world_start.wav")
+	setSprites();
+	MarioAnimation();
 }
 function setup(){
 	createCanvas(1240, 336);
